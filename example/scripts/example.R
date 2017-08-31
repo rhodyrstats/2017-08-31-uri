@@ -99,5 +99,23 @@ mydates <- paste(surveys$year,surveys$month,surveys$day,
 head(mydates)
 ymd(mydates)
 surveys$date <- ymd(mydates)
+#note that some dates didn't convert
+#dates that don't exist are converted to NA
+#might consider converting these to the next real day
 str(surveys)
-plot(as.factor(surveys$day))
+
+#Data Manipulation
+library(dplyr)
+#install if needed
+#dplyr is part of the tidyverse which can be
+#installed as one unit
+#it's too large to have everyone install on URI
+#wifi right now
+
+#get some columns
+head(select(surveys,plot_id,species_id,weight))
+surveys_95 <- filter(surveys,year==1995)
+head(filter(surveys,year!=1995))
+
+select(surveys_95,species_id, weight)
+
