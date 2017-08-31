@@ -58,3 +58,15 @@ surveys$weight_kg <-surveys$weight/1000
 surveys$hf_w <- surveys$hindfoot_length/surveys$weight
 
 #types of data
+str(surveys)
+surveys$taxa
+nlevels(surveys$taxa)
+as.character(surveys$taxa)
+
+#be careful with factors!
+#factors that look like integers will convert to the 
+#wrong value with as.numeric
+year_as_factor <- factor(surveys$year)
+as.numeric(year_as_factor)
+as.numeric(as.character(year_as_factor))
+
