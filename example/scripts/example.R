@@ -173,8 +173,28 @@ surveys %>% group_by(sex,species_id) %>%
 
 #Challenge
 #1. how many individuals were caught in each plot type?
+plot_caught <- surveys %>% group_by(plot_type) %>%
+  tally
 #2. what are the min,mean, max hindfoot length for
 #each species
+surveys %>% group_by(species_id) %>%
+  summarise(min_h = min(hindfoot_length,na.rm = TRUE),
+            mean_h = mean(hindfoot_length,na.rm = TRUE),
+            max_h = max(hindfoot_length,na.rm=TRUE)) %>%
+  filter(!is.na(mean_h))
 #3. what was the heaviest species measured each year
 #include year, genus, species_id, weight
+
+#Long v wide format
+#wide = human readable
+#long = computer readable
+#data frame with mean weight of each genus for each plot
+surveys_genus_weight <- surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(genus,plot_id) %>%
+  summarise(mean_w = mean(weight))
+
+
+
+
 
