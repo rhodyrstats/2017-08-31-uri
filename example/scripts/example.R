@@ -146,5 +146,5 @@ surveys %>% filter(!is.na(weight)) %>% head
 #make a new data frame that contains species_id
 #and hindfoot_half, where this is half the 
 #hindfoot length
-#only include length <30 and no NA
+#only include length <30 and no NA (in length)
 
