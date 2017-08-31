@@ -195,8 +195,15 @@ surveys_genus_weight <- surveys %>%
   summarise(mean_w = mean(weight))
 #convert from long to wide
 library(tidyr)
+#in spread we have fill=0 because animals mass really was 0
+#omit fill=0 to leave as NA
 surveys_genus_weight_wide <- surveys_genus_weight %>%
-  spread(genus,mean_w)
+  spread(genus,mean_w, fill=0)
+
+surveys_genus_weight %>%
+  spread(genus,mean_w, fill=0) %>%
+  cor(use = "pairwise.complete")
+
 
 
 
