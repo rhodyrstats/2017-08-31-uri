@@ -147,4 +147,9 @@ surveys %>% filter(!is.na(weight)) %>% head
 #and hindfoot_half, where this is half the 
 #hindfoot length
 #only include length <30 and no NA (in length)
+surveys %>%mutate(hind_half = hindfoot_length/2) %>%
+  filter(hind_half < 30) %>%
+  filter(!is.na(hind_half)) %>%
+  select(species_id, hind_half) %>%
+  tally
 
