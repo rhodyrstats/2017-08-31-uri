@@ -4,6 +4,8 @@ download.file("https://ndownloader.figshare.com/files/2292169",
 #surveys <- read.csv("data/portal_data_joined.csv", 
 #                    na.strings = c('missing','NA','na'))
 surveys <- read.csv("data/portal_data_joined.csv")
+#surveys <- read.csv("data/portal_data_joined.csv",
+#                    stringsAsFactors = FALSE)
 
 #this is how I get info about the data
 head(surveys)
