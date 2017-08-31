@@ -142,5 +142,9 @@ surveys %>% mutate(weight_kg = weight/1000,
 surveys %>% filter(!is.na(weight)) %>% tally
 surveys %>% filter(!is.na(weight)) %>% head
 
-
+#Challenge
+#make a new data frame that contains species_id
+#and hindfoot_half, where this is half the 
+#hindfoot length
+#only include length <30 and no NA
 
