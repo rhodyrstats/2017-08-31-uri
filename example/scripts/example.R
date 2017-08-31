@@ -184,6 +184,17 @@ surveys %>% group_by(species_id) %>%
   filter(!is.na(mean_h))
 #3. what was the heaviest species measured each year
 #include year, genus, species_id, weight
+surveys %>% group_by(year) %>%
+  filter(weight == max(weight,na.rm = TRUE)) %>%
+  select(year,genus,species_id,weight) %>%
+  arrange(year)
+
+surveys %>% group_by(year,genus,species_id) %>%
+  summarize(mean_weight = mean(weight,na.rm=TRUE)) %>%
+  group_by(year) %>%
+  filter(mean_weight == max(mean_weight,na.rm=TRUE)) %>%
+  select(year,genus,species_id,mean_weight) %>%
+  arrange(year)
 
 #Long v wide format
 #wide = human readable
