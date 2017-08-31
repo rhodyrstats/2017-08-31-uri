@@ -55,3 +55,6 @@ mean(surveys$weight, na.rm = TRUE)
 tail(surveys$weight/1000)
 tail(surveys$weight)
 surveys$weight_kg <-surveys$weight/1000
+surveys$hf_w <- surveys$hindfoot_length/surveys$weight
+
+#types of data
