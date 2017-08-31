@@ -153,4 +153,28 @@ surveys_w_half <- surveys %>%
   filter(!is.na(hind_half)) %>%
   select(species_id, hind_half)
 
+#Split Apply Combine
+surveys %>% group_by(sex) %>%
+  summarise(mean_weight = mean(weight, na.rm=TRUE))
+
+surveys %>% group_by(sex,species_id) %>%
+  summarise(mean_weight = mean(weight, na.rm=TRUE)) %>%
+  filter(!is.na(mean_weight)) %>%
+  tail
+
+surveys %>% group_by(sex,species_id) %>%
+  summarise(mean_weight = mean(weight, na.rm=TRUE),
+            min_weight = min(weight)) %>%
+  filter(!is.na(mean_weight)) %>%
+  tail
+
+surveys %>% group_by(sex,species_id) %>%
+  tally
+
+#Challenge
+#1. how many individuals were caught in each plot type?
+#2. what are the min,mean, max hindfoot length for
+#each species
+#3. what was the heaviest species measured each year
+#include year, genus, species_id, weight
 
