@@ -34,9 +34,13 @@ nrow(surveys) #outputs 34786
 row_last <- surveys[34786,]
 #3. Create a data frame of the last row _without_ inputing
 # the row number directly
-row_last <- surveys[nrow(surveys),]
+
+num_of_rows <-nrow(surveys) #stores 34786 in num_of_rows
+row_last <- surveys[num_of_rows,] 
+
+str(row_last <- surveys[nrow(surveys),])
 #option 2
-tail(surveys,1)
+str(tail(surveys,1))
 
 #view in a separate window
 View(row_last)
