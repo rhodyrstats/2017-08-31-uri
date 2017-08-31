@@ -1,7 +1,8 @@
 #get portal data
 download.file("https://ndownloader.figshare.com/files/2292169",
               "data/portal_data_joined.csv")
-surveys <- read.csv("data/portal_data_joined.csv")
+surveys <- read.csv("data/portal_data_joined.csv", 
+                    na.strings = c('missing','NA','na'))
 
 #this is how I get info about the data
 head(surveys)
@@ -45,3 +46,6 @@ str(tail(surveys,1))
 #view in a separate window
 View(row_last)
 View(surveys[nrow(surveys),])
+
+#calculate the mean of a column (eg weight)
+mean(surveys$weight, na.rm = TRUE)
