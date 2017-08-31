@@ -70,3 +70,11 @@ year_as_factor <- factor(surveys$year)
 as.numeric(year_as_factor)
 as.numeric(as.character(year_as_factor))
 
+plot(surveys$sex)
+sex <- surveys$sex
+head(sex)
+levels(sex)
+levels(sex)[1] <- "missing"
+
+#Challenge
+
