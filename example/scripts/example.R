@@ -204,6 +204,8 @@ surveys_genus_weight %>%
   spread(genus,mean_w, fill=0) %>%
   cor(use = "pairwise.complete")
 
+surveys_genus_weight_long <- surveys_genus_weight_wide %>%
+  gather(genus,mean_weight,-plot_id)
 
 
 
