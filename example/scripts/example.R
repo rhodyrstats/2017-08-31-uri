@@ -24,3 +24,10 @@ surveys[1,]
 surveys[1:3,1:3]
 
 surveys_sample1 <- surveys[1,]
+
+#Challenge
+#1. Create a data frame containing only row 200
+#2. Find the number of rows in surveys and create a 
+#data frame of this row
+#3. Create a data frame of the last row _without_ inputing
+# the row number directly
