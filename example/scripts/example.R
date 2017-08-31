@@ -17,3 +17,10 @@ all_sp_ids <- surveys$species_id
 all_sp_ids2 <- surveys[,"species_id"]
 all_sp_ids_df <- surveys["species_id"]
 all_sp_ids3 <- surveys[["species_id"]]
+
+surveys[1,1]
+surveys[1,6]
+surveys[1,]
+surveys[1:3,1:3]
+
+surveys_sample1 <- surveys[1,]
