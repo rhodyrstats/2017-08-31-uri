@@ -27,7 +27,11 @@ surveys_sample1 <- surveys[1,]
 
 #Challenge
 #1. Create a data frame containing only row 200
+survey200 <- surveys[200,]
 #2. Find the number of rows in surveys and create a 
 #data frame of the last row
+nrow(surveys) #outputs 34786
+row_last <- surveys[34786,]
 #3. Create a data frame of the last row _without_ inputing
 # the row number directly
+row_last <- surveys[nrow(surveys),]
