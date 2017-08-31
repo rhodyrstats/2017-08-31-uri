@@ -77,4 +77,10 @@ levels(sex)
 levels(sex)[1] <- "missing"
 
 #Challenge
+#rename M and F as Male and Female
+levels(sex)[2] <- "Female"
+levels(sex)[3] <- "Male"
 
+levels(sex) <- c("Missing","Female","Male")
+plot(sex)
+sex[75]
