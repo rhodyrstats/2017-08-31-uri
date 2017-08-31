@@ -86,3 +86,18 @@ levels(sex)[3] <- "Male"
 levels(sex) <- c("Missing","Female","Male")
 plot(sex)
 sex[75]
+
+#dates
+#keep Y, M, D as separate columns
+#YYYY-MM-DD is best for sorting
+
+install.packages('lubridate')
+library(lubridate)
+#put all three date related columns into a single list
+mydates <- paste(surveys$year,surveys$month,surveys$day,
+      sep = "-")
+head(mydates)
+ymd(mydates)
+surveys$date <- ymd(mydates)
+str(surveys)
+plot(as.factor(surveys$day))
