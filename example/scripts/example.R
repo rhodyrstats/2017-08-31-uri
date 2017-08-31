@@ -119,3 +119,4 @@ head(filter(surveys,year!=1995))
 
 select(surveys_95,species_id, weight)
 
+surveys %>% filter(year==1995) %>% head
