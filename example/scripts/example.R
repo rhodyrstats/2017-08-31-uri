@@ -125,3 +125,22 @@ surveys %>% filter(year==1995) %>%
 #Challenge
 #Get columns year, sex, and weight for individuals
 #before 1995
+surveys %>% filter(year < 1995) %>%
+  select(year,sex,weight)
+
+#get the data with an extra column
+#but not changing the original data
+surveys %>% mutate(weight_kg = weight/1000) %>%
+  head
+
+#more than one new column
+#second column can be based on the first col
+surveys %>% mutate(weight_kg = weight/1000,
+                   weight_kg2 = weight_kg*2) %>%
+  tail
+
+surveys %>% filter(!is.na(weight)) %>% tally
+surveys %>% filter(!is.na(weight)) %>% head
+
+
+
