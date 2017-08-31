@@ -193,7 +193,10 @@ surveys_genus_weight <- surveys %>%
   filter(!is.na(weight)) %>%
   group_by(genus,plot_id) %>%
   summarise(mean_w = mean(weight))
-
+#convert from long to wide
+library(tidyr)
+surveys_genus_weight_wide <- surveys_genus_weight %>%
+  spread(genus,mean_w)
 
 
 
