@@ -14,3 +14,4 @@ str(surveys)
 
 #access some of the data
 all_sp_ids <- surveys$species_id
+all_sp_ids2 <- surveys[,]
