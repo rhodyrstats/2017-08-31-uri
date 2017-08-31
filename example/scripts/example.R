@@ -190,7 +190,7 @@ surveys %>% group_by(year) %>%
   arrange(year)
 
 surveys %>% group_by(year,genus,species_id) %>%
-  summarize(mean_weight == mean(weight,na.rm=TRUE)) %>%
+  summarize(mean_weight = mean(weight,na.rm=TRUE)) %>%
   group_by(year) %>%
   filter(mean_weight == max(mean_weight,na.rm=TRUE)) %>%
   select(year,genus,species_id,mean_weight) %>%
