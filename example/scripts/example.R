@@ -263,5 +263,20 @@ write.csv(surveys_complete_common,
           row.names = FALSE)
 
 library(ggplot2)
-ggplot(data = surveys_complete_common, 
-       aes(x = weight, y = hindfoot_length))
+#save base plot to a variable
+weight_length_plot <- ggplot(data = surveys_complete_common, 
+       aes(x = weight, y = hindfoot_length)) 
+
+#plot points on base weight length plot
+weight_length_plot + 
+  geom_point(alpha=0.1,aes(color=species_id))
+
+library(hexbin)
+weight_length_plot + geom_hex()
+
+#Challenge
+#create a plot of weight v species_id with plot
+#id's in different colors
+
+
+
