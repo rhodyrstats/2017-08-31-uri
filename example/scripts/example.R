@@ -262,4 +262,6 @@ write.csv(surveys_complete_common,
           file = "data_output/surveys_common_complete.csv",
           row.names = FALSE)
 
-
+library(ggplot2)
+ggplot(data = surveys_complete_common, 
+       aes(x = weight, y = hindfoot_length))
