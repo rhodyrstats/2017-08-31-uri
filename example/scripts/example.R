@@ -230,6 +230,7 @@ surveys_ngen_plot_year_wide <- surveys_ngen_plot_year %>%
   spread(year,n_gen)
 
 #2. make the data frame long so each row is a unique plot_id and year
-
+surveys_ngen_plot_year_long <- surveys_ngen_plot_year_wide %>% 
+  gather(year,n_gen,-plot_id)
 
 
