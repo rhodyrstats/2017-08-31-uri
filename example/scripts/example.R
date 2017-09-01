@@ -245,3 +245,12 @@ surveys_avg_meas <- surveys_long %>%
   group_by(year,plot_type,measurement) %>%
   summarise(mean = mean(value))
 
+#writing data to a file
+#first let's get a complete dataset so
+#we can plot with it later
+surveys_complete <- surveys %>%
+  filter(species_id != "", !is.na(weight),
+         !is.na(hindfoot_length),
+         !is.na(sex))
+
+
