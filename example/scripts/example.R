@@ -225,6 +225,8 @@ surveys_genus_weight_long <- surveys_genus_weight_wide %>%
   #number of genera (genuses :) as value
   #hint: check out the n_distinct function
 
+
+
 #2. make the data frame long so each row is a unique plot_id and year
 
 
