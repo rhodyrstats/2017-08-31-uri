@@ -349,9 +349,22 @@ ggplot(data = avg_weight_sp_year,
 avg_weight_sp_year_sex <- surveys_complete_common %>%
   group_by(species_id,year,sex) %>%
   summarise(mean_weight = mean(weight))
-ggplot(data = avg_weight_sp_year_sex,
-       aes(x = year, y = mean_weight, color = sex)) +
+
+plot_weight_sex <- ggplot(data = avg_weight_sp_year_sex,
+       aes(x = year, y = mean_weight, color = sex)) 
+plot_weight_sex+
   geom_line() + facet_wrap(~species_id) +
   theme_light() + theme(panel.grid = element_blank())
 
+avg_weight_sp_year_sex_plot <- ggplot(data = avg_weight_sp_year_sex,
+       aes(x = year, y = mean_weight, color = species_id))+
+  geom_line()+facet_grid(species_id~sex) +
+  labs(x = 'Year', y = 'Mean Weight') +
+  theme(axis.text.x = element_text(color="grey20",
+                                   size=12,angle=90,
+                                   hjust=.5,vjust=.5))
+ggsave("figs/avg_weight_sp_year_sex.png",
+       avg_weight_sp_year_sex_plot,
+       width = 6, height = 10)
+  
 
