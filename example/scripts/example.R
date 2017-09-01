@@ -301,9 +301,13 @@ sp_weight_plot +
 #bonus: use viridis colors
 sp_len_plot <- ggplot(data = surveys_complete_common,
        aes(x = species_id, y = hindfoot_length))
+library(viridis)
 sp_len_plot +
   geom_jitter(alpha=0.1,aes(color=factor(plot_id))) +
   geom_boxplot(alpha = 0) +
   scale_color_viridis(discrete=TRUE,option="magma")
 
+#Time series plots
+#plot counts per year of each (complete, common) species
+#Challenge: get those counts
 
