@@ -351,4 +351,7 @@ avg_weight_sp_year_sex <- surveys_complete_common %>%
   summarise(mean_weight = mean(weight))
 ggplot(data = avg_weight_sp_year_sex,
        aes(x = year, y = mean_weight, color = sex)) +
-  geom_line() + facet_wrap(~species_id)
+  geom_line() + facet_wrap(~species_id) +
+  theme_light() + theme(panel.grid = element_blank())
+
+
