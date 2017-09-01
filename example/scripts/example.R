@@ -310,4 +310,11 @@ sp_len_plot +
 #Time series plots
 #plot counts per year of each (complete, common) species
 #Challenge: get those counts
+yearly_counts <- surveys_complete_common %>%
+  group_by(species_id,year) %>% tally
 
+#make sure to color or group by species so that 
+#the line doesn't go through all species counts for
+#each year
+ggplot(data = yearly_counts, aes(x = year, y = n)) +
+  geom_line(aes(color = species_id))
