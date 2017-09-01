@@ -226,8 +226,8 @@ surveys_genus_weight_long <- surveys_genus_weight_wide %>%
   #hint: check out the n_distinct function
 surveys_ngen_plot_year <- surveys %>% group_by(year,plot_id) %>%
   summarise(n_gen = n_distinct(genus))
-surveys_ngen_plot_year %>% 
-  spread(plot_id,year,)
+surveys_ngen_plot_year_wide <- surveys_ngen_plot_year %>% 
+  spread(plot_id,n_gen)
 
 #2. make the data frame long so each row is a unique plot_id and year
 
