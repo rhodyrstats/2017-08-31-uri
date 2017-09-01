@@ -251,6 +251,9 @@ surveys_avg_meas <- surveys_long %>%
 surveys_complete <- surveys %>%
   filter(species_id != "", !is.na(weight),
          !is.na(hindfoot_length),
-         !is.na(sex))
-
+         !is.na(sex),
+         sex != "")
+surveys_common <- surveys_complete %>%
+  group_by(species_id) %>%
+  tally %>% filter(n>=50)
 
