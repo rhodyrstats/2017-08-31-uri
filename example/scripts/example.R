@@ -317,4 +317,6 @@ yearly_counts <- surveys_complete_common %>%
 #the line doesn't go through all species counts for
 #each year
 ggplot(data = yearly_counts, aes(x = year, y = n)) +
-  geom_line(aes(color = species_id))
+  geom_line(aes(color = species_id))+geom_point()
+
+
