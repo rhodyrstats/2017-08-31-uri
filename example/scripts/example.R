@@ -287,6 +287,10 @@ sp_weight_plot +
   geom_boxplot(alpha = 0.1)
 
 #use colors() to print out list of colors
+#use viridis for red-green colorblind
+#more color info in etherpad
+
+
 
 
 
