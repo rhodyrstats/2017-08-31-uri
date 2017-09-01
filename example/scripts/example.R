@@ -339,3 +339,9 @@ ggplot(data = yearly_counts_sex,
 #can do as one plot
 #can do as multiple plots
 #can separate by sex (adjust data accordingly)
+avg_weight_sp_year <- surveys_complete_common %>%
+  group_by(species_id,year) %>%
+  summarise(mean_weight = mean(weight))
+ggplot(data = avg_weight_sp_year, 
+       aes(x = year,y = mean_weight,color=species_id)) +
+  geom_line()
