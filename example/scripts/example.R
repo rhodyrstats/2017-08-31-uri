@@ -290,8 +290,14 @@ sp_weight_plot +
 #use viridis for red-green colorblind
 #more color info in etherpad
 
+#violin plot for density that a boxplot doesn't communicate
+sp_weight_plot + 
+  geom_violin() + scale_y_log10()
 
-
+#Challenge
+#create a boxplot for hindfoot length for each species (id)
+#overlay all the points
+#color points by plot id
 
 
 
