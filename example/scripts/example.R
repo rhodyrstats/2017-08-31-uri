@@ -233,4 +233,7 @@ surveys_ngen_plot_year_wide <- surveys_ngen_plot_year %>%
 surveys_ngen_plot_year_long <- surveys_ngen_plot_year_wide %>% 
   gather(year,n_gen,-plot_id)
 
+#make survey data _really_ long
+surveys_long <- surveys %>%
+  gather(measurement,value,hindfoot_length:weight)
 
