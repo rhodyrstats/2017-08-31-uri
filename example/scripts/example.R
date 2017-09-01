@@ -277,6 +277,10 @@ weight_length_plot + geom_hex()
 #Challenge
 #create a plot of weight v species_id with plot
 #id's in different colors
+ggplot(data = surveys_complete_common,
+       aes(x = species_id, y = weight)) +
+  geom_point(alpha = 0.1,aes(color=plot_id))
+
 
 
 
