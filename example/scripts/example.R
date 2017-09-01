@@ -298,6 +298,7 @@ sp_weight_plot +
 #create a boxplot for hindfoot length for each species (id)
 #overlay all the points
 #color points by plot id (discrete colors not a scale)
+#bonus: use viridis colors
 
 
 
