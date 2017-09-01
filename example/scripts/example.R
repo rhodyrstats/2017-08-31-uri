@@ -316,8 +316,18 @@ yearly_counts <- surveys_complete_common %>%
 #make sure to color or group by species so that 
 #the line doesn't go through all species counts for
 #each year
-ggplot(data = yearly_counts, aes(x = year, y = n,
-                                 color = species_id)) +
-  geom_line()+geom_point()
+yearly_count_plot <- ggplot(data = yearly_counts, aes(x = year, y = n,
+                                 color = species_id)) 
+yearly_count_plot+geom_line()+geom_point()
 
+#each item needs its own plot
+yearly_count_plot + geom_line() +
+  facet_wrap(~species_id)
 
+#now that each species has its own plot
+#plot sex data separately for each species
+yearly_counts_sex <- surveys_complete_common %>%
+  group_by(species_id,year,sex) %>% tally
+ggplot(data = yearly_counts_sex, 
+       aes(x = year, y = n, color = sex)) +
+  geom_line() + facet_wrap(~species_id)
