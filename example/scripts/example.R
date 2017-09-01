@@ -331,3 +331,11 @@ yearly_counts_sex <- surveys_complete_common %>%
 ggplot(data = yearly_counts_sex, 
        aes(x = year, y = n, color = sex)) +
   geom_line() + facet_wrap(~species_id)
+
+#Challenge:
+# plot how the average weight of each species changes
+# over time
+#hint: what data do you need first
+#can do as one plot
+#can do as multiple plots
+#can separate by sex (adjust data accordingly)
