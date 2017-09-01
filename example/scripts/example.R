@@ -237,3 +237,11 @@ surveys_ngen_plot_year_long <- surveys_ngen_plot_year_wide %>%
 surveys_long <- surveys %>%
   gather(measurement,value,hindfoot_length:weight)
 
+#Challenge
+#calculate avg for each measurement in each year / plot_type
+#start with surveys_long
+surveys_avg_meas <- surveys_long %>% 
+  filter(!is.na(value)) %>% 
+  group_by(year,plot_type,measurement) %>%
+  summarise(mean = mean(value))
+
