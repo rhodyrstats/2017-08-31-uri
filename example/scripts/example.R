@@ -224,7 +224,8 @@ surveys_genus_weight_long <- surveys_genus_weight_wide %>%
   #plot_id as row
   #number of genera (genuses :) as value
   #hint: check out the n_distinct function
-
+surveys_ngen_plot_year <- surveys %>% group_by(year,plot_id) %>%
+  summarise(n_gen = n_distinct(genus))
 
 
 #2. make the data frame long so each row is a unique plot_id and year
