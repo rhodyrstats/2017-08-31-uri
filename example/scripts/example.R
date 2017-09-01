@@ -277,9 +277,16 @@ weight_length_plot + geom_hex()
 #Challenge
 #create a plot of weight v species_id with plot
 #id's in different colors
-ggplot(data = surveys_complete_common,
-       aes(x = species_id, y = weight)) +
-  geom_point(alpha = 0.1,aes(color=plot_id))
+#make plot_id a factor so you get discrete colors
+sp_weight_plot <- ggplot(data = surveys_complete_common,
+       aes(x = species_id, y = weight)) 
+sp_weight_plot + 
+  geom_point(alpha = 0.1,aes(color=factor(plot_id)))
+sp_weight_plot + 
+  geom_jitter(alpha=0.3,color="tomato") + 
+  geom_boxplot(alpha = 0.1)
+
+#use colors() to print out list of colors
 
 
 
