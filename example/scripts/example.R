@@ -256,4 +256,10 @@ surveys_complete <- surveys %>%
 surveys_common <- surveys_complete %>%
   group_by(species_id) %>%
   tally %>% filter(n>=50)
+surveys_complete_common <- surveys_complete %>%
+  filter(species_id %in% surveys_common$species_id)
+write.csv(surveys_complete_common,
+          file = "data_output/surveys_common_complete.csv",
+          row.names = FALSE)
+
 
